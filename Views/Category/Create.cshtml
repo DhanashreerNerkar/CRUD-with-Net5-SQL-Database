@@ -1,0 +1,30 @@
+﻿@model NetCoreApp2.Models.Category
+
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-info pl-3">
+                Add Category
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-8 row">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="CategoryName"> </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="CategoryName" class="form-control" />
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col"><input type="submit" class="btn btn-info w-100" value="Create" /></div>
+                <div class="col"><a asp-controller="Category" asp-action="Index" class="btn btn-success w-100">Back</a></div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    @{ <partial name="_ValidationScriptsPartial"/>}
+}
